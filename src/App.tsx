@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import feedbacksData from './data/feedback.json';
+import hightecourseLogo from './assets/hackaton2.png'
 import mabrukLogo from './assets/mabruk-logo.png';
 import abrahemLogo from './assets/abrahem-logo.jpg';
 
@@ -221,18 +222,12 @@ function App() {
       <div className="fixed bottom-6 left-6 flex flex-col gap-3 z-10">
         <div className="w-48 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300 bg-white p-2">
           <img
-            src={mabrukLogo}
+            src={hightecourseLogo}
             alt="Ma.Bruk Logo"
             className="w-full h-auto object-contain filter drop-shadow-lg"
           />
         </div>
-        <div className="w-48 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300">
-          <img
-            src={abrahemLogo}
-            alt="Abrahem Logo"
-            className="w-full h-auto object-contain filter drop-shadow-lg"
-          />
-        </div>
+       
       </div>
     </div>
   );
