@@ -94,13 +94,13 @@ function App() {
 
 
   return (
-      <div dir="rtl" className="min-h-screen overflow-y-auto lg:overflow-hidden bg-gradient-to-br from-amber-50 via-white to-orange-100 text-slate-900 flex flex-col relative">
+    <div dir="rtl" className="min-h-screen overflow-y-auto lg:overflow-hidden bg-gradient-to-br from-[#004a8f] via-[#0d67b8] to-[#00356e] text-slate-100 flex flex-col relative">
       {/* Hero Section */}
       <div className="relative overflow-hidden flex-shrink-0">
-        <div className="absolute inset-0 opacity-70">
-          <div className="absolute -left-32 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-orange-300/40 via-amber-200/30 to-transparent blur-3xl" />
-          <div className="absolute right-[-10%] top-10 h-72 w-72 rounded-full bg-gradient-to-br from-amber-400/40 via-yellow-200/30 to-transparent blur-3xl" />
-          <div className="absolute left-10 bottom-0 h-64 w-64 rounded-full bg-gradient-to-br from-orange-200/40 via-amber-100/30 to-transparent blur-3xl" />
+        <div className="absolute inset-0 opacity-80">
+          <div className="absolute -left-32 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-cyan-300/40 via-blue-200/30 to-transparent blur-3xl" />
+          <div className="absolute right-[-10%] top-10 h-72 w-72 rounded-full bg-gradient-to-br from-sky-400/40 via-blue-200/30 to-transparent blur-3xl" />
+          <div className="absolute left-10 bottom-0 h-64 w-64 rounded-full bg-gradient-to-br from-indigo-300/30 via-sky-200/30 to-transparent blur-3xl" />
         </div>
         <div className="container mx-auto px-4 py-8 relative">
           <h1 className="text-4xl lg:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-400 drop-shadow-lg">
