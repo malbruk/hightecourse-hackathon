@@ -52,20 +52,20 @@ function App() {
     const shouldClamp = isLong && !isExpanded;
 
     return (
-      <div className="card-section relative flex flex-col gap-3 bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-4 rounded-2xl border border-white/10">
-        <div className="text-sm font-semibold text-purple-200 uppercase tracking-wide">{label}</div>
+      <div className="card-section relative flex flex-col gap-3 bg-gradient-to-br from-white to-orange-50 p-4 rounded-2xl border border-orange-100">
+        <div className="text-sm font-semibold text-orange-700 uppercase tracking-wide">{label}</div>
         <div className="relative flex-1">
-          <p className={`text-slate-100 leading-relaxed ${shouldClamp ? 'line-clamp-4' : ''}`}>
+          <p className={`text-slate-800 leading-relaxed ${shouldClamp ? 'line-clamp-4' : ''}`}>
             {text}
           </p>
           {shouldClamp && (
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-slate-900/90 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-orange-100/90 via-orange-50/60 to-transparent" />
           )}
         </div>
         {isLong && (
           <button
             onClick={() => toggleSectionExpand(sectionKey)}
-            className="self-start text-sm font-semibold text-purple-300 hover:text-white transition-colors duration-200 mt-2"
+            className="self-start text-sm font-semibold text-orange-700 hover:text-orange-900 transition-colors duration-200 mt-2"
           >
             {isExpanded ? 'הצג פחות ↑' : 'קרא עוד ↓'}
           </button>
@@ -94,19 +94,19 @@ function App() {
 
 
   return (
-    <div dir="rtl" className="min-h-screen overflow-y-auto lg:overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-900 text-white flex flex-col relative">
+      <div dir="rtl" className="min-h-screen overflow-y-auto lg:overflow-hidden bg-gradient-to-br from-amber-50 via-white to-orange-100 text-slate-900 flex flex-col relative">
       {/* Hero Section */}
       <div className="relative overflow-hidden flex-shrink-0">
-        <div className="absolute inset-0 opacity-60">
-          <div className="absolute -left-32 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-indigo-500/20 via-purple-400/10 to-transparent blur-3xl" />
-          <div className="absolute right-[-10%] top-10 h-72 w-72 rounded-full bg-gradient-to-br from-pink-400/20 via-sky-300/10 to-transparent blur-3xl" />
-          <div className="absolute left-10 bottom-0 h-64 w-64 rounded-full bg-gradient-to-br from-emerald-400/10 via-indigo-400/10 to-transparent blur-3xl" />
+        <div className="absolute inset-0 opacity-70">
+          <div className="absolute -left-32 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-orange-300/40 via-amber-200/30 to-transparent blur-3xl" />
+          <div className="absolute right-[-10%] top-10 h-72 w-72 rounded-full bg-gradient-to-br from-amber-400/40 via-yellow-200/30 to-transparent blur-3xl" />
+          <div className="absolute left-10 bottom-0 h-64 w-64 rounded-full bg-gradient-to-br from-orange-200/40 via-amber-100/30 to-transparent blur-3xl" />
         </div>
         <div className="container mx-auto px-4 py-8 relative">
-          <h1 className="text-4xl lg:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-sky-300">
+          <h1 className="text-4xl lg:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-400 drop-shadow-lg">
             מסע פיתוח פרויקט FullStack
           </h1>
-          <p className="text-lg text-center mb-6 text-indigo-100/80">
+          <p className="text-lg text-center mb-6 text-orange-800/80">
             גלו את החוויות המעצבות של המפתחות המוכשרות שלנו
           </p>
         </div>
@@ -116,10 +116,10 @@ function App() {
       <div className="container mx-auto px-4 pb-6 flex-1 lg:overflow-hidden overflow-visible">
         <div className="relative max-w-6xl mx-auto h-full">
           {currentFeedback && (
-            <div
-              key={`${currentFeedback.email}-${currentFeedback.time}-${currentIndex}`}
-              className="group rounded-3xl bg-gradient-to-b from-white/10 to-white/5 border border-white/10 overflow-hidden shadow-2xl animate-fade-in h-full flex flex-col"
-            >
+              <div
+                key={`${currentFeedback.email}-${currentFeedback.time}-${currentIndex}`}
+                className="group rounded-3xl bg-gradient-to-b from-white via-orange-50 to-amber-50 border border-orange-200 overflow-hidden shadow-2xl animate-fade-in h-full flex flex-col"
+              >
               <div className="p-6 flex-1 flex flex-col">
                 <div className="grid gap-6 lg:grid-cols-[320px,1fr] flex-1 overflow-hidden">
                   {/* Right Side - Cards */}
@@ -127,14 +127,14 @@ function App() {
                     {/* Student Name and View Button - Above Cards */}
                     <div className="flex flex-col gap-4 mb-6">
                       <div>
-                        <h3 className="text-4xl font-bold bg-gradient-to-r from-purple-300 via-pink-300 to-sky-300 bg-clip-text text-transparent drop-shadow-2xl">
+                        <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 bg-clip-text text-transparent drop-shadow-2xl">
                           {currentFeedback.fullName}
                         </h3>
                       </div>
                       {currentFeedback.appLink && (
                         <button
                           onClick={() => window.open(currentFeedback.appLink, '_blank', 'noopener,noreferrer')}
-                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 text-base font-semibold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-200 self-start"
+                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-400 text-white px-6 py-3 text-base font-semibold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-200 self-start"
                         >
                           <span aria-hidden>👀</span> צפייה מלאה
                         </button>
@@ -152,14 +152,14 @@ function App() {
                       <div className="flex gap-4">
                         <button
                           onClick={handlePrev}
-                          className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 shadow-lg transition-all duration-200 hover:scale-105 text-lg font-medium"
+                          className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white text-orange-700 hover:bg-orange-50 border border-orange-200 shadow-lg transition-all duration-200 hover:scale-105 text-lg font-medium"
                         >
                           <span className="text-xl">←</span>
                           הקודם
                         </button>
                         <button
                           onClick={handleNext}
-                          className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white text-indigo-900 font-semibold shadow-lg hover:scale-105 transition-all duration-200 text-lg"
+                          className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-400 text-white font-semibold shadow-lg hover:scale-105 transition-all duration-200 text-lg"
                         >
                           הבא
                           <span className="text-xl">→</span>
@@ -170,9 +170,9 @@ function App() {
 
                   {/* Left Side - Project Preview */}
                   <div className="order-1 lg:order-2 h-full">
-                    <div className="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-950 p-4 rounded-3xl shadow-2xl h-full flex flex-col">
+                    <div className="relative bg-gradient-to-br from-white via-orange-50 to-amber-50 p-4 rounded-3xl shadow-2xl h-full flex flex-col border border-orange-200">
                       {currentFeedback.appLink ? (
-                        <div className="relative w-full flex-1 overflow-hidden rounded-3xl border border-white/10 shadow-xl bg-slate-950">
+                        <div className="relative w-full flex-1 overflow-hidden rounded-3xl border border-orange-200 shadow-xl bg-white">
                           <iframe
                             src={currentFeedback.appLink}
                             title={`תצוגה חיה של ${currentFeedback.fullName}`}
@@ -181,23 +181,23 @@ function App() {
                             sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"
                             allowFullScreen
                           />
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-indigo-950/80 via-indigo-900/40 to-transparent" />
-                          <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-slate-900/60 via-slate-900/20 to-transparent" />
+                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-orange-200/70 via-orange-100/30 to-transparent" />
+                          <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-amber-100/70 via-orange-50/30 to-transparent" />
                           <div className="absolute left-4 right-4 bottom-4 flex flex-wrap items-center gap-3 justify-between">
-                            <div className="inline-flex items-center gap-2 rounded-full bg-indigo-950/80 px-4 py-2 text-sm text-indigo-50 border border-white/10 backdrop-blur">
-                              <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden />
+                            <div className="inline-flex items-center gap-2 rounded-full bg-orange-500/90 px-4 py-2 text-sm text-white border border-orange-200 backdrop-blur">
+                              <span className="inline-flex h-2 w-2 rounded-full bg-white animate-pulse" aria-hidden />
                               תצוגה חיה — ניתן לשחק וללחוץ בתוך האפליקציה
                             </div>
                             <button
                               onClick={() => window.open(currentFeedback.appLink, '_blank', 'noopener,noreferrer')}
-                              className="inline-flex items-center gap-2 rounded-full bg-white text-indigo-900 px-4 py-2 text-sm font-semibold shadow-lg hover:scale-105 transition"
+                              className="inline-flex items-center gap-2 rounded-full bg-white text-orange-700 px-4 py-2 text-sm font-semibold shadow-lg hover:scale-105 transition border border-orange-200"
                             >
                               <span aria-hidden>🚀</span> פתיחה בחלון חדש
                             </button>
                           </div>
                         </div>
                       ) : (
-                        <div className="flex h-full w-full flex-col items-center justify-center gap-4 rounded-3xl border border-white/10 bg-white/5 text-indigo-100 shadow-inner">
+                        <div className="flex h-full w-full flex-col items-center justify-center gap-4 rounded-3xl border border-orange-200 bg-orange-50 text-orange-700 shadow-inner">
                           <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 text-5xl">🖼️</div>
                           <p className="text-xl text-center">אין קישור זמין להצגת פרויקט</p>
                         </div>
@@ -220,7 +220,7 @@ function App() {
 
       {/* Logos positioned at bottom left */}
       <div className="fixed bottom-6 left-6 flex flex-col gap-3 z-10">
-        <div className="w-48 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300 bg-white p-2">
+        <div className="w-48 h-auto opacity-90 hover:opacity-100 transition-opacity duration-300 bg-white p-2 rounded-xl shadow-lg border border-orange-200">
           <img
             src={hightecourseLogo}
             alt="Ma.Bruk Logo"
