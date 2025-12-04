@@ -107,6 +107,11 @@ const FinalsPage = () => {
         <div className="absolute right-[-10%] top-10 h-72 w-72 rounded-full bg-gradient-to-br from-amber-300/30 via-orange-200/30 to-transparent blur-3xl" />
         <div className="absolute left-10 bottom-0 h-64 w-64 rounded-full bg-gradient-to-br from-yellow-200/30 via-amber-200/30 to-transparent blur-3xl" />
       </div>
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="finals-aurora top-[-10%] left-[-20%]" />
+        <div className="finals-aurora top-[20%] right-[-10%] delay-[1.5s]" />
+        <div className="finals-beam" />
+      </div>
 
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-8">
@@ -119,14 +124,19 @@ const FinalsPage = () => {
           </h2>
         </div>
 
-        <div className="grid gap-5 grid-cols-4 grid-rows-2 max-w-6xl mx-auto">
+        <div className="grid gap-5 grid-cols-4 grid-rows-2 max-w-6xl mx-auto finals-grid">
           {projectsWithIds.map(project => (
             <button
               type="button"
               key={project.id}
               onClick={() => navigate(`/projects/${project.id}`)}
-              className="relative rounded-3xl bg-gradient-to-b from-white/95 via-orange-50/90 to-amber-50/90 border border-orange-100 shadow-xl text-left rtl:text-right transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl p-6 flex flex-col gap-4"
+              className="relative rounded-3xl bg-gradient-to-b from-white/95 via-orange-50/90 to-amber-50/90 border border-orange-100 shadow-xl text-left rtl:text-right transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl p-6 flex flex-col gap-4 overflow-hidden group"
             >
+              <span className="pointer-events-none absolute -inset-1 rounded-[28px] bg-gradient-to-r from-amber-200/40 via-white/30 to-orange-300/40 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
+              <span className="pointer-events-none finals-card-glow" />
+              <span className="pointer-events-none finals-card-shine" />
+              <span className="pointer-events-none finals-card-spark top-4 right-6" />
+              <span className="pointer-events-none finals-card-spark bottom-6 left-8 delay-[0.6s]" />
               <div className="flex items-center justify-between">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white text-orange-700 px-3 py-1 text-xs font-semibold border border-orange-200 shadow-sm">
                   <span aria-hidden>🏅</span>
@@ -247,9 +257,6 @@ const ProjectsPage = () => {
         <h2 className="text-3xl lg:text-4xl font-bold text-center mb-3 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-400 drop-shadow-lg">
           הפרויקטים של ההאקתון
         </h2>
-        <p className="text-lg text-orange-100/90 max-w-3xl mx-auto">
-          דפדפו בין האפליקציות שבנו הסטודנטיות שלנו במהלך ההאקתון וגלו מה הן יצרו בזמן קצר ומרוכז.
-        </p>
       </div>
 
       <div className="container mx-auto px-4 pb-10 lg:overflow-hidden overflow-visible relative">
